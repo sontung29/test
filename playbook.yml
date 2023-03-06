@@ -3,17 +3,17 @@
   remote_user: root
   become: true
   tasks:
-    - name: Install Docker
-      yum:
-        name:
-          - docker
-          - docker-compose
-        state: present
-    - name: "Starting and Enabling Docker service"
-      service:
-        name: docker
-        state: started
-        enabled: yes
+#    - name: Install Docker
+#      yum:
+#        name:
+#          - docker
+#          - docker-compose
+#        state: present
+#    - name: "Starting and Enabling Docker service"
+#      service:
+#        name: docker
+#        state: started
+#        enabled: yes
     - name: Login DockerHub
       shell: docker login -u "{{DOCKER_USERNAME}}" -p "{{DOCKER_PASSWORD}}"
     - name: Copy file
